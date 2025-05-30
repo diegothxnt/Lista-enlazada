@@ -58,5 +58,13 @@ void insertar(int nuevoValor) {
             nodoActual->siguiente = nuevoNodo;
         }
     }
-
+Nodo* buscar(int valorBuscado) {
+        Nodo* nodoActual = inicio;
+        while (nodoActual) {
+            if (nodoActual->valor == valorBuscado)
+                return nodoActual;
+            nodoActual = nodoActual->siguiente;
+        }
+        return nullptr;
+    }
 

@@ -67,4 +67,32 @@ Nodo* buscar(int valorBuscado) {
         }
         return nullptr;
     }
+ void eliminar(int valorEliminar) {
+        if (!inicio) {
+            cout << "La lista esta vacia" << endl;
+            return;
+        }
+
+        if (inicio->valor == valorEliminar) {
+            Nodo* nodoTemporal = inicio;
+            inicio = inicio->siguiente;
+            delete nodoTemporal;
+            cout << "Nodo con valor " << valorEliminar << " eliminado" << endl;
+            return;
+        }
+
+        Nodo* nodoActual = inicio;
+        while (nodoActual->siguiente && nodoActual->siguiente->valor != valorEliminar) {
+            nodoActual = nodoActual->siguiente;
+        }
+
+        if (nodoActual->siguiente) {
+            Nodo* nodoTemporal = nodoActual->siguiente;
+            nodoActual->siguiente = nodoTemporal->siguiente;
+            delete nodoTemporal;
+            cout << "Nodo con valor " << valorEliminar << " eliminado" << endl;
+        } else {
+            cout << "Valor no encontrado" << endl;
+        }
+    }
 

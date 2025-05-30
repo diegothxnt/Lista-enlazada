@@ -12,3 +12,9 @@ public:
         this->siguiente = nullptr;
     }
 };
+class ListaEnlazada {
+private:
+    Nodo* inicio;
+    bool esOrdenada;
+
+public:

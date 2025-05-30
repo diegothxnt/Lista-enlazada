@@ -22,3 +22,8 @@ public:
         inicio = nullptr;
         esOrdenada = false;
     }
+ListaEnlazada(int valor, Nodo* siguienteNodo) {
+        inicio = new Nodo(valor);
+        inicio->siguiente = siguienteNodo;
+        esOrdenada = false;
+    }

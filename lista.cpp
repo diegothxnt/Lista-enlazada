@@ -18,3 +18,7 @@ private:
     bool esOrdenada;
 
 public:
+ ListaEnlazada() {
+        inicio = nullptr;
+        esOrdenada = false;
+    }

@@ -32,4 +32,31 @@ ListaEnlazada(int valor, Nodo* siguienteNodo, bool tipoOrden) {
         inicio->siguiente = siguienteNodo;
         esOrdenada = tipoOrden;
     }
+void insertar(int nuevoValor) {
+        Nodo* nuevoNodo = new Nodo(nuevoValor);
+
+        if (!inicio) {
+            inicio = nuevoNodo;
+            return;
+        }
+
+        if (!esOrdenada) {
+            nuevoNodo->siguiente = inicio;
+            inicio = nuevoNodo;
+        } else {
+            if (nuevoValor < inicio->valor) {
+                nuevoNodo->siguiente = inicio;
+                inicio = nuevoNodo;
+                return;
+            }
+
+            Nodo* nodoActual = inicio;
+            while (nodoActual->siguiente && nodoActual->siguiente->valor < nuevoValor) {
+                nodoActual = nodoActual->siguiente;
+            }
+            nuevoNodo->siguiente = nodoActual->siguiente;
+            nodoActual->siguiente = nuevoNodo;
+        }
+    }
+
 

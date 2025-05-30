@@ -163,3 +163,8 @@ void menu() {
 
     } while (opcionMenu != 0);
 }
+int main() {
+    menu();
+    return 0;
+}
+

@@ -95,4 +95,14 @@ Nodo* buscar(int valorBuscado) {
             cout << "Valor no encontrado" << endl;
         }
     }
-
+void mostrar() {
+        Nodo* nodoActual = inicio;
+        while (nodoActual) {
+            cout << nodoActual->valor;
+            if (nodoActual->siguiente)
+                cout << " - ";
+            nodoActual = nodoActual->siguiente;
+        }
+        cout << endl;
+    }
+};

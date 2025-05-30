@@ -27,3 +27,9 @@ ListaEnlazada(int valor, Nodo* siguienteNodo) {
         inicio->siguiente = siguienteNodo;
         esOrdenada = false;
     }
+ListaEnlazada(int valor, Nodo* siguienteNodo, bool tipoOrden) {
+        inicio = new Nodo(valor);
+        inicio->siguiente = siguienteNodo;
+        esOrdenada = tipoOrden;
+    }
+

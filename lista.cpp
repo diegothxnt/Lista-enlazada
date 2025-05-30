@@ -106,3 +106,60 @@ void mostrar() {
         cout << endl;
     }
 };
+void menu() {
+    int opcionMenu, datoUsuario, tipoLista;
+
+    cout << "Crear nueva lista:" << endl;
+    cout << "1. Lista desordenada" << endl;
+    cout << "2. Lista ordenada " << endl;
+    cout << "Seleccione tipo: ";
+    cin >> tipoLista;
+
+    ListaEnlazada miLista;
+    if (tipoLista == 2) {
+        miLista = ListaEnlazada(0, nullptr, true);
+        miLista.eliminar(0);
+    }
+
+    do {
+        cout << endl;
+        cout << "    MENU  " << endl;
+        cout << "1. Insertar valor" << endl;
+        cout << "2. Buscar valor" << endl;
+        cout << "3. Eliminar valor" << endl;
+        cout << "4. Mostrar lista" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcionMenu;
+
+        if (opcionMenu == 1) {
+            cout << "Ingrese el valor a insertar: ";
+            cin >> datoUsuario;
+            miLista.insertar(datoUsuario);
+        }
+        else if (opcionMenu == 2) {
+            cout << "Ingrese el valor a buscar: ";
+            cin >> datoUsuario;
+            if (miLista.buscar(datoUsuario))
+                cout << "Valor encontrado" << endl;
+            else
+                cout << "Valor no encontrado" << endl;
+        }
+        else if (opcionMenu == 3) {
+            cout << "Ingrese el valor a eliminar: ";
+            cin >> datoUsuario;
+            miLista.eliminar(datoUsuario);
+        }
+        else if (opcionMenu == 4) {
+            cout << "Contenido de la lista:" << endl;
+            miLista.mostrar();
+        }
+        else if (opcionMenu == 0) {
+            cout << "Saliendo del programa..." << endl;
+        }
+        else {
+            cout << "Opcion no valida" << endl;
+        }
+
+    } while (opcionMenu != 0);
+}
